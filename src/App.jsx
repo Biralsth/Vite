@@ -2,6 +2,7 @@ import { useState } from "react";
 
 import "./App.css";
 import Navbar from "./assets/components/Navbar";
+import Alert from "./assets/components/Alert";
 
 function App() {
   // const [count, setCount] = useState(0)
@@ -9,13 +10,30 @@ function App() {
 
   const [text, setText] = useState("Enable dark mode");
 
+  const [alert, setAlert] = useState(null)
+
+
+  const showAlert = (type, message) => {
+
+    setAlert({
+      type: type,
+      message: message
+
+    })
+    // setTimeout { () =>}
+  }
+
+
+
   const toggleMode = () => {
     if (mode == "light") {
       setMode("dark");
       setText("Enable light mode")
+      showAlert("success", "Dark mode has been enabled")
     } else {
       setMode("light");
       setText("Enable dark mode")
+      showAlert("success", "Light mode has been enabled")
     }
   };
 
@@ -27,6 +45,9 @@ function App() {
         text={text}
         toggleMode={toggleMode}
       />
+      <Alert alert={alert} />
+
+
 
       {/* <h1>Noob + mode</h1>
       <div className="card">
@@ -35,6 +56,8 @@ function App() {
         </button>
         
       </div> */}
+
+
     </>
   );
 }
