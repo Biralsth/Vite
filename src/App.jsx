@@ -3,6 +3,16 @@ import { useState } from "react";
 import "./App.css";
 import Navbar from "./assets/components/Navbar";
 import Alert from "./assets/components/Alert";
+import {
+  BrowserRouter as Router,
+  Routes,
+  Route,
+
+} from "react-router-dom";
+
+import About from "./assets/components/About";
+import Home from "./assets/components/Home";
+import Contact from "./assets/components/Contact";
 
 function App() {
   // const [count, setCount] = useState(0)
@@ -20,7 +30,12 @@ function App() {
       message: message
 
     })
-    // setTimeout { () =>}
+
+    setTimeout(() => {
+      setAlert(null)
+    }, 2000);
+
+
   }
 
 
@@ -39,26 +54,25 @@ function App() {
 
   return (
     <>
-      <Navbar
-        title="THIS IS HEADER"
-        mode={mode}
-        text={text}
-        toggleMode={toggleMode}
-      />
-      <Alert alert={alert} />
+      <Router>
+        <Navbar
+          title="THIS IS HEADER"
+          mode={mode}
+          text={text}
+          toggleMode={toggleMode}
+        />
+        <Alert alert={alert} />
 
-
-
-      {/* <h1>Noob + mode</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 5)}>
-          count is {count}
-        </button>
-        
-      </div> */}
+        <Routes>
+          <Route path="/" element={< Home />} />
+          <Route path="/about" element={<About />} />
+          <Route path="/contact" element={<Contact />} />
+        </Routes>
+      </Router>
 
 
     </>
+
   );
 }
 
