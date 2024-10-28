@@ -41,6 +41,10 @@ const Home = () => {
             <div className="container">
                 <h4>Analyse your text</h4>
                 <p>{text.split(' ').length} words and {text.length} character</p>
+
+                <p>{0.008 * text.split(' ').length}</p>
+
+                <h4>Preview text</h4>
                 <p>{text.length > 0 ? text : "no previev to display"}</p>
 
             </div>
