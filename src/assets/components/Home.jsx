@@ -17,8 +17,16 @@ const Home = () => {
     }
 
     const clearTextArea = () => {
+        setText('')
+
 
     }
+
+    const copyTextArea = () => {
+
+    }
+
+
 
     const handleChange = (e) => {
         e.preventDefault()
@@ -36,6 +44,8 @@ const Home = () => {
                 <button className='btn btn-primary mt-3 mx-2' onClick={handleUpperCase}>Uppercase</button>
                 <button className='btn btn-primary mt-3 mx-2' onClick={handleLowerCase}>Lowercase</button>
                 <button className='btn btn-primary mt-3 mx-2' onClick={clearTextArea}>clear</button>
+                {/* <button className='btn btn-primary mt-3 mx-2' onClick={clearTextArea}>Alert</button>
+                <button className='btn btn-primary mt-3 mx-2' onClick={copyTextArea}>Copy</button> */}
             </div>
 
             <div className="container">
