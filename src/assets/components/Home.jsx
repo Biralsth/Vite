@@ -4,6 +4,7 @@ import { useState } from "react";
 const Home = () => {
 
     const [text, setText] = useState("")
+    const [copyText, setCopyText] = useState('')
 
     const handleUpperCase = () => {
         console.log("You clicked uppercase button")
@@ -11,7 +12,7 @@ const Home = () => {
 
     }
     const handleLowerCase = () => {
-        console.log("You clicked uppercase button")
+        console.log("You clicked lowercase button")
         setText(text.toLowerCase())
 
     }
@@ -22,7 +23,20 @@ const Home = () => {
 
     }
 
-    const copyTextArea = () => {
+    const handleCopy = () => {
+
+
+        console.log("You clicked copy button")
+        navigator.clipboard.writeText(text)
+        alert("Text copied")
+
+    }
+    const handleCopy2 = () => {
+
+
+        console.log("You clicked copy button")
+        navigator.clipboard.writeText(copyText)
+        alert("Text copied")
 
     }
 
@@ -44,8 +58,10 @@ const Home = () => {
                 <button className='btn btn-primary mt-3 mx-2' onClick={handleUpperCase}>Uppercase</button>
                 <button className='btn btn-primary mt-3 mx-2' onClick={handleLowerCase}>Lowercase</button>
                 <button className='btn btn-primary mt-3 mx-2' onClick={clearTextArea}>clear</button>
-                {/* <button className='btn btn-primary mt-3 mx-2' onClick={clearTextArea}>Alert</button>
-                <button className='btn btn-primary mt-3 mx-2' onClick={copyTextArea}>Copy</button> */}
+
+                <button className='btn btn-primary mt-3 mx-2' onClick={handleCopy}>Copy</button>
+
+
             </div>
 
             <div className="container">
@@ -57,6 +73,13 @@ const Home = () => {
                 <h4>Preview text</h4>
                 <p>{text.length > 0 ? text : "no previev to display"}</p>
 
+            </div>
+
+            <div>
+
+                <textarea className="form-control" value={copyText} onChange={(e) => setCopyText(e.target.value)}
+                    placeholder={copyText} id="exampleFormControlTextarea1" rows="3"></textarea>
+                <button className='btn btn-primary mt-3 mx-2' onClick={handleCopy2}>Copy</button>
             </div>
 
 
