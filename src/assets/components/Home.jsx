@@ -6,6 +6,7 @@ const Home = () => {
     const [text, setText] = useState("")
     const [copyText, setCopyText] = useState('')
 
+
     const handleUpperCase = () => {
         console.log("You clicked uppercase button")
         setText(text.toUpperCase())
@@ -19,28 +20,22 @@ const Home = () => {
 
     const clearTextArea = () => {
         setText('')
-
-
     }
 
     const handleCopy = () => {
-
 
         console.log("You clicked copy button")
         navigator.clipboard.writeText(text)
         alert("Text copied")
 
     }
-    const handleCopy2 = () => {
 
+    const handleCopy2 = () => {
 
         console.log("You clicked copy button")
         navigator.clipboard.writeText(copyText)
-        alert("Text copied")
-
+        alert('Text copied!')
     }
-
-
 
     const handleChange = (e) => {
         e.preventDefault()
@@ -49,6 +44,7 @@ const Home = () => {
     }
 
     return (
+
         <div>
             <div className="mb-3 container">
                 <label htmlFor="exampleFormControlTextarea1" className="form-label">Example text area</label>
@@ -60,7 +56,6 @@ const Home = () => {
                 <button className='btn btn-primary mt-3 mx-2' onClick={clearTextArea}>clear</button>
 
                 <button className='btn btn-primary mt-3 mx-2' onClick={handleCopy}>Copy</button>
-
 
             </div>
 
@@ -76,15 +71,10 @@ const Home = () => {
             </div>
 
             <div>
-
                 <textarea className="form-control" value={copyText} onChange={(e) => setCopyText(e.target.value)}
                     placeholder={copyText} id="exampleFormControlTextarea1" rows="3"></textarea>
                 <button className='btn btn-primary mt-3 mx-2' onClick={handleCopy2}>Copy</button>
             </div>
-
-
-
-
         </div>
     )
 }
