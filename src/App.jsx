@@ -14,6 +14,8 @@ import About from "./assets/components/About";
 import Home from "./assets/components/Home";
 import Contact from "./assets/components/Contact";
 
+import Classes from "./assets/components/Classes";
+
 function App() {
   // const [count, setCount] = useState(0)
   const [mode, setMode] = useState("light");
@@ -62,6 +64,7 @@ function App() {
           toggleMode={toggleMode}
         />
         <Alert alert={alert} />
+        <Classes />
 
         <Routes>
           <Route path="/" element={< Home />} />

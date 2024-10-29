@@ -1,7 +1,7 @@
 import React from 'react'
 import { useState } from "react";
 
-const Home = () => {
+const Home = (props) => {
 
     const [text, setText] = useState("")
     const [copyText, setCopyText] = useState('')
@@ -34,7 +34,7 @@ const Home = () => {
 
         console.log("You clicked copy button")
         navigator.clipboard.writeText(copyText)
-        alert('Text copied!')
+        props.showAlert("success", "Text copied")
     }
 
     const handleChange = (e) => {
