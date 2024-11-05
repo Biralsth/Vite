@@ -15,6 +15,7 @@ import Home from "./assets/components/Home";
 import Contact from "./assets/components/Contact";
 
 import Classes from "./assets/components/Classes";
+import Func from "./assets/components/Func";
 
 function App() {
   // const [count, setCount] = useState(0)
@@ -64,7 +65,9 @@ function App() {
           toggleMode={toggleMode}
         />
         <Alert alert={alert} />
-        <Classes />
+        {/* <Classes /> */}
+
+        <Func />
 
         <Routes>
           <Route path="/" element={< Home />} />
