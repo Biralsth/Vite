@@ -16,6 +16,7 @@ import Contact from "./assets/components/Contact";
 
 import Classes from "./assets/components/Classes";
 import Func from "./assets/components/Func";
+import Counter from "./assets/components/Counter";
 
 function App() {
   // const [count, setCount] = useState(0)
@@ -68,6 +69,8 @@ function App() {
         {/* <Classes /> */}
 
         <Func />
+
+        <Counter />
 
         <Routes>
           <Route path="/" element={< Home />} />
